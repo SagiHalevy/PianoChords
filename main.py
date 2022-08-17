@@ -53,12 +53,12 @@ def getChordsFromFile():
 
 #Gets chords name and downloads the chord image
 def downloadChord(chord):
-    if exists('chordImages/'+chord+'.png'):
-        return Image.open('chordImages/'+chord+'.png')
+    if exists('downloadedChordImages/'+chord+'.png'):
+        return Image.open('downloadedChordImages/'+chord+'.png')
     try:
         url = "https://www.pianochord.org/images/"+chord+".png"
-        request.urlretrieve(url, 'chordImages/'+chord+".png")
-        return Image.open('chordImages/'+chord+'.png')
+        request.urlretrieve(url, 'downloadedChordImages/'+chord+".png")
+        return Image.open('downloadedChordImages/'+chord+'.png')
     except Exception:
         print("Couldn't find chord")
 
